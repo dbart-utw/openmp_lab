@@ -2,8 +2,8 @@
 
 int main () {
     float a[NRA][NCA],           /* matrix A to be multiplied */
-        b[NCA][NCB],           /* matrix B to be multiplied */
-        c[NRA][NCB];           /* result matrix C */
+          b[NCA][NCB],           /* matrix B to be multiplied */
+          c[NRA][NCB];           /* result matrix C */
 
     /*** Initialize matrices ***/
     init_matrices(a, b, c);
@@ -11,7 +11,7 @@ int main () {
     /*** Do matrix multiplication  ***/
     printf("Computing matrix multiplication...\n");
     struct timespec start, end;
-    clock_gettime(CLOCK_MONOTONIC, &start);
+    clock_gettime(CLOCK_MONOTONIC, &start); /* Start the timer */
 
     /* TODO: ADD YOUR PRAGMA'S HERE */
     for (int i=0; i<NRA; i++) {
@@ -22,7 +22,7 @@ int main () {
         }
     }
 
-    clock_gettime(CLOCK_MONOTONIC, &end);
+    clock_gettime(CLOCK_MONOTONIC, &end); /* End the timer */
     double elapsed_time_ms = (end.tv_sec - start.tv_sec) * 1000.0 +
                              (end.tv_nsec - start.tv_nsec) / 1e6;
 
